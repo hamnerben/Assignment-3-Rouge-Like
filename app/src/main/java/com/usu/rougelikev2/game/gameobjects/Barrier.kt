@@ -3,6 +3,7 @@ package com.usu.rougelikev2.game.gameobjects
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import androidx.annotation.ColorInt
 import com.usu.rougelikev2.game.gameengine.Game
 import com.usu.rougelikev2.game.gameengine.GameObject
 import com.usu.rougelikev2.game.gameengine.Location
@@ -19,7 +20,24 @@ class Barrier(game: Game) : GameObject(game) {
         val myX = coords.x * cellSize
         val myY = coords.y * cellSize
         canvas.translate(myX, myY)
-        paint.color = Color.GRAY
+        paint.color = Color.rgb(153,76,0)
         canvas.drawRect(0f, 0f, cellSize.toFloat(), cellSize.toFloat(), paint)
+        paint.color = Color.rgb(75,29,0)
+        paint.style = Paint.Style.STROKE
+        paint.strokeWidth = 8f
+        canvas.drawRect(0f, 0f, cellSize.toFloat(), cellSize.toFloat() * .33f, paint)
+        canvas.drawRect(0f, cellSize.toFloat() * .33f, cellSize.toFloat(), cellSize.toFloat() * .66f, paint)
+        canvas.drawRect(0f, cellSize.toFloat() * .66f, cellSize.toFloat(), cellSize.toFloat(), paint)
+        paint.style = Paint.Style.FILL
+        canvas.drawCircle(cellSize.toFloat() * .1f, cellSize.toFloat() * .16f, cellSize.toFloat() * .05f, paint)
+        canvas.drawCircle(cellSize.toFloat() * .1f, cellSize.toFloat() * .49f, cellSize.toFloat() * .05f, paint)
+        canvas.drawCircle(cellSize.toFloat() * .1f, cellSize.toFloat() * .84f, cellSize.toFloat() * .05f, paint)
+
+        canvas.drawCircle(cellSize.toFloat() * .9f, cellSize.toFloat() * .16f, cellSize.toFloat() * .05f, paint)
+        canvas.drawCircle(cellSize.toFloat() * .9f, cellSize.toFloat() * .49f, cellSize.toFloat() * .05f, paint)
+        canvas.drawCircle(cellSize.toFloat() * .9f, cellSize.toFloat() * .84f, cellSize.toFloat() * .05f, paint)
+
+
+
     }
 }
