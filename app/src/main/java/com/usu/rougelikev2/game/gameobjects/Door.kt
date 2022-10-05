@@ -2,6 +2,7 @@ package com.usu.rougelikev2.game.gameobjects
 
 
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.Paint
 import com.usu.rougelikev2.game.gameengine.Game
 import com.usu.rougelikev2.game.gameengine.GameObject
@@ -22,8 +23,15 @@ class Door(game: Game?) : GameObject(game!!) {
         val myY = coords.y * cellSize
 
         canvas.translate(myX, myY)
-        paint.style = Paint.Style.STROKE
-        paint.strokeWidth = 2f
+        paint.color = Color.rgb(103,56,0)
         canvas.drawRect(10f, 10f, (cellSize - 10).toFloat(), (cellSize - 10).toFloat(), paint)
+        paint.color = Color.BLACK
+        canvas.drawCircle(cellSize.toFloat() * .1f, cellSize.toFloat() * .16f, cellSize.toFloat() * .05f, paint)
+        canvas.drawCircle(cellSize.toFloat() * .1f, cellSize.toFloat() * .84f, cellSize.toFloat() * .05f, paint)
+        canvas.drawCircle(cellSize.toFloat() * .9f, cellSize.toFloat() * .84f, cellSize.toFloat() * .05f, paint)
+        canvas.drawCircle(cellSize.toFloat() * .9f, cellSize.toFloat() * .16f, cellSize.toFloat() * .05f, paint)
+        paint.style = Paint.Style.STROKE
+        canvas.drawRect(10f, 10f, (cellSize - 10).toFloat(), (cellSize - 10).toFloat(), paint)
+
     }
 }
