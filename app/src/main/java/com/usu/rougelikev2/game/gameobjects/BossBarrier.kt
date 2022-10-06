@@ -21,7 +21,23 @@ class BossBarrier(game: Game?) : GameObject(game!!) {
         val myY = coords.y * cellSize
 
         canvas.translate(myX, myY)
-        paint.color = Color.BLUE
-        canvas.drawRect(0f, 0f, cellSize, cellSize, paint)
+        paint.color = Color.rgb(0,102,204)
+        canvas.drawRect(0f, 0f, cellSize.toFloat(), cellSize.toFloat(), paint)
+        paint.color = Color.rgb(0,51,102)
+        paint.style = Paint.Style.STROKE
+        paint.strokeWidth = 8f
+        canvas.drawRect(0f, 0f, cellSize.toFloat(), cellSize.toFloat() * .33f, paint)
+        canvas.drawRect(0f, cellSize.toFloat() * .33f, cellSize.toFloat(), cellSize.toFloat() * .66f, paint)
+        canvas.drawRect(0f, cellSize.toFloat() * .66f, cellSize.toFloat(), cellSize.toFloat(), paint)
+        paint.style = Paint.Style.FILL
+        canvas.drawCircle(cellSize.toFloat() * .1f, cellSize.toFloat() * .16f, cellSize.toFloat() * .05f, paint)
+        canvas.drawCircle(cellSize.toFloat() * .1f, cellSize.toFloat() * .49f, cellSize.toFloat() * .05f, paint)
+        canvas.drawCircle(cellSize.toFloat() * .1f, cellSize.toFloat() * .84f, cellSize.toFloat() * .05f, paint)
+
+        canvas.drawCircle(cellSize.toFloat() * .9f, cellSize.toFloat() * .16f, cellSize.toFloat() * .05f, paint)
+        canvas.drawCircle(cellSize.toFloat() * .9f, cellSize.toFloat() * .49f, cellSize.toFloat() * .05f, paint)
+        canvas.drawCircle(cellSize.toFloat() * .9f, cellSize.toFloat() * .84f, cellSize.toFloat() * .05f, paint)
+
+
     }
 }
