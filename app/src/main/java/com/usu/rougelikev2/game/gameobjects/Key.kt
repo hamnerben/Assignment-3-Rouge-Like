@@ -1,6 +1,7 @@
 package com.usu.rougelikev2.game.gameobjects
 
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.Paint
 import com.usu.rougelikev2.game.gameengine.Game
 import com.usu.rougelikev2.game.gameengine.GameObject
@@ -24,13 +25,19 @@ class Key(game: Game?) : GameObject(game!!) {
 
         canvas.translate(myX, myY)
         paint.style = Paint.Style.STROKE
-        paint.strokeWidth = 4f
+        paint.color = Color.YELLOW
+        paint.strokeWidth = 10f
         canvas.drawCircle(
+            (cellSize.toFloat() * .25f),
             (cellSize / 2).toFloat(),
-            (cellSize / 2).toFloat(),
-            (cellSize / 2).toFloat(),
+            (cellSize / 10).toFloat(),
             paint
         )
+        paint.style = Paint.Style.FILL
+        canvas.drawRect(cellSize.toFloat() * .3f, cellSize.toFloat() * .48f, cellSize.toFloat() * .7f, cellSize.toFloat() * .55f, paint)
+        canvas.drawRect(cellSize.toFloat() * .45f, cellSize.toFloat() *.55f, cellSize.toFloat() * .52f, cellSize.toFloat() * .67f, paint)
+        canvas.drawRect(cellSize.toFloat() * .55f, cellSize.toFloat() *.55f, cellSize.toFloat() * .63f, cellSize.toFloat() * .67f, paint)
+
     }
 
     init {
