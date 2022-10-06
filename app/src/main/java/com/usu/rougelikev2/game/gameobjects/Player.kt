@@ -80,8 +80,24 @@ class Player(game: Game?) : GameObject(game!!) {
 
         // TODO: Draw something interesting that represents the player
         canvas.translate(myX, myY)
-        paint.color = Color.GREEN
-        canvas.drawRect(0f, 0f, cellSize.toFloat(), cellSize.toFloat(), paint)
+        paint.color = Color.rgb(255,255,255)
+        canvas.drawCircle(cellSize.toFloat() * .5f, cellSize.toFloat() * .2f, cellSize.toFloat() * .2f,paint) // hat
+
+        paint.color = Color.rgb(255, 229,204)
+        canvas.drawCircle(cellSize.toFloat() * .5f, cellSize.toFloat() * .2f, cellSize.toFloat() * .15f,paint) // head
+        canvas.drawRect(cellSize.toFloat() * .2f, cellSize.toFloat() * .3f,cellSize.toFloat() * .25f, cellSize.toFloat() * .7f, paint ) // left arm
+        canvas.drawRect(cellSize.toFloat() * .75f, cellSize.toFloat() * .3f,cellSize.toFloat() * .8f, cellSize.toFloat() * .7f, paint ) // right arm
+        canvas.drawRect(cellSize.toFloat() * .3f, cellSize.toFloat() * .8f,cellSize.toFloat() * .35f, cellSize.toFloat(), paint ) // left leg
+        canvas.drawRect(cellSize.toFloat() * .65f, cellSize.toFloat() * .8f,cellSize.toFloat() * .7f, cellSize.toFloat(), paint ) // right leg
+
+
+
+        paint.color = Color.rgb(102,178,255)
+        canvas.drawRect(cellSize.toFloat() * .25f, cellSize.toFloat() * .3f, cellSize.toFloat() * .75f, cellSize.toFloat() * .55f, paint) //torso
+        paint.color = Color.rgb(0,102,204)
+        canvas.drawRect(cellSize.toFloat() * .25f, cellSize.toFloat() * .55f, cellSize.toFloat() * .75f, cellSize.toFloat() * .8f, paint) // legs
+
+
     }
 
     init {
