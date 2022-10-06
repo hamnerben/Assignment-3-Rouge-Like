@@ -43,14 +43,14 @@ class Fog(game: Game?) : GameObject(game!!) {
         val status: String = state["status"]
         canvas.translate(myX, myY)
 
-//        // COMMENT OUT THESE LINES WHEN DEBUGGING
-//        if (status == "hidden") {
-//            canvas.drawRect(0f, 0f, cellSize.toFloat(), cellSize.toFloat(), paint)
-//        } else if (status == "visited") {
-//            paint.color = Color.argb(.1f, 0f, 0f, 0f)
-//            canvas.drawRect(0f, 0f, cellSize.toFloat(), cellSize.toFloat(), paint)
-//        } // don't draw anything if visible
-//        // END COMMENT OUT SECTION
+        // COMMENT OUT THESE LINES WHEN DEBUGGING
+        if (status == "hidden") {
+            canvas.drawRect(0f, 0f, cellSize.toFloat(), cellSize.toFloat(), paint)
+        } else if (status == "visited") {
+            paint.color = Color.argb(.1f, 0f, 0f, 0f)
+            canvas.drawRect(0f, 0f, cellSize.toFloat(), cellSize.toFloat(), paint)
+        } // don't draw anything if visible
+        // END COMMENT OUT SECTION
 
     }
 
