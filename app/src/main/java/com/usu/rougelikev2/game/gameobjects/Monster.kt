@@ -202,12 +202,53 @@ class Monster(game: Game?) : GameObject(game!!) {
         val isAlive: Boolean = state["alive"]
 
         canvas.translate(myX.toFloat(), myY.toFloat())
+            val BLUEHEADR = cellSize.toFloat() * .25f
         if (isAlive) {
-            paint.color = Color.RED
+            val BLUEHEADX = cellSize.toFloat() * .5f
+            val BLUEHEADY = cellSize.toFloat() * .5f
+
+            val BLUEBODLEFT = BLUEHEADX - BLUEHEADR
+            val BlUEBODTOP = BLUEHEADY
+            val BLUEBODRIGHT = BLUEHEADX + BLUEHEADR
+            val BLUEBODBOTTOM = cellSize.toFloat()
+
+            val WHITEX = BLUEHEADX * .85f
+            val WHITEY = BLUEHEADY * 1.1f
+            val WHITER = BLUEHEADR * .7f
+
+            val WHITEBODRIGHT = BLUEBODRIGHT * .8f
+
+            val LEFTEYEX = WHITEX * .7f
+            val EYEY = WHITEY
+            val RIGHTEYEX = WHITEX * 1.1f
+            val EYER = 7f
+
+            val BEAKLEFT = LEFTEYEX * .7f
+            val BEAKTOP = EYEY * 1.1f
+            val BEAKRIGHT = WHITEX * .9f
+            val BEAKBOTTOM = EYEY * 1.2f
+
+            paint.color = Color.rgb(0,51,102)
+            canvas.drawCircle(BLUEHEADX, BLUEHEADY, BLUEHEADR, paint)
+            canvas.drawRect(BLUEBODLEFT, BlUEBODTOP, BLUEBODRIGHT, BLUEBODBOTTOM, paint)
+
+
+
+            paint.color = Color.rgb(255,255,204)
+            canvas.drawCircle(WHITEX, WHITEY, WHITER, paint)
+            canvas.drawRect(BLUEBODLEFT, BlUEBODTOP, WHITEBODRIGHT, BLUEBODBOTTOM, paint)
+
+            paint.color = Color.BLACK
+            canvas.drawCircle(LEFTEYEX, EYEY, EYER, paint)
+            canvas.drawCircle(RIGHTEYEX, EYEY, EYER, paint)
+
+            paint.color = Color.rgb(255,255,102)
+            canvas.drawRect(BEAKLEFT, BEAKTOP, BEAKRIGHT, BEAKBOTTOM, paint)
+
         } else {
             paint.color = Color.CYAN
         }
-        canvas.drawRect(0f, 0f, cellSize.toFloat(), cellSize.toFloat(), paint)
+
     }
 
     init {
