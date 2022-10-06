@@ -218,11 +218,40 @@ class BossMonster(game: Game?) : GameObject(game!!) {
         canvas.translate(myX, myY)
         val alive: Boolean = state["alive"]
         if (alive) {
-            paint.color = Color.MAGENTA
+            paint.color = Color.rgb(0,102,204)
+            canvas.drawRect(cellSize.toFloat() * .25f, cellSize.toFloat() * .2f, cellSize.toFloat(), cellSize.toFloat(), paint)
+            paint.color = Color.rgb(230,255,255)
+            canvas.drawCircle(cellSize.toFloat() * .5f, cellSize.toFloat() * .2f, cellSize.toFloat() * .3f, paint)
+            paint.style = Paint.Style.STROKE
+            paint.strokeWidth = 3f
+            paint.color = Color.rgb(0,204,204)
+            canvas.drawCircle(cellSize.toFloat() * .5f, cellSize.toFloat() * .2f, cellSize.toFloat() * .3f, paint)
+            paint.style = Paint.Style.FILL
+            paint.color = Color.YELLOW
+            canvas.drawRect(cellSize.toFloat() * .2f, 0f, cellSize.toFloat() * .7f, cellSize.toFloat() * .1f, paint)
+            paint.color = Color.BLACK
+            canvas.drawCircle(cellSize.toFloat() * .2f, cellSize.toFloat() * .2f, cellSize.toFloat() * .04f, paint)
+            canvas.drawCircle(cellSize.toFloat() * .5f, cellSize.toFloat() * .2f, cellSize.toFloat() * .04f, paint)
+            paint.color = Color.WHITE
+            canvas.drawRect(cellSize.toFloat() * .2f, cellSize.toFloat() * .25f, cellSize.toFloat() * .6f, cellSize.toFloat() * .6f, paint)
+
         } else {
-            paint.color = Color.CYAN
+            paint.color = Color.WHITE
+            canvas.drawRect(cellSize.toFloat() * .25f, cellSize.toFloat() * .2f, cellSize.toFloat(), cellSize.toFloat(), paint)
+            paint.color = Color.rgb(230,255,255)
+            canvas.drawCircle(cellSize.toFloat() * .5f, cellSize.toFloat() * .2f, cellSize.toFloat() * .3f, paint)
+            paint.style = Paint.Style.STROKE
+            paint.strokeWidth = 3f
+            paint.color = Color.rgb(0,204,204)
+            canvas.drawCircle(cellSize.toFloat() * .5f, cellSize.toFloat() * .2f, cellSize.toFloat() * .3f, paint)
+            paint.style = Paint.Style.FILL
+            paint.color = Color.RED
+            canvas.drawCircle(cellSize.toFloat() * .2f, cellSize.toFloat() * .2f, cellSize.toFloat() * .04f, paint)
+            canvas.drawCircle(cellSize.toFloat() * .5f, cellSize.toFloat() * .2f, cellSize.toFloat() * .04f, paint)
+            paint.color = Color.WHITE
+            canvas.drawRect(cellSize.toFloat() * .2f, cellSize.toFloat() * .25f, cellSize.toFloat() * .6f, cellSize.toFloat() * .6f, paint)
+
         }
-        canvas.drawRect(0f, 0f, cellSize.toFloat(), cellSize.toFloat(), paint)
     }
 
     init {
