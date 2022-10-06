@@ -21,9 +21,17 @@ class BossFloor(game: Game?) : GameObject(game!!) {
         val myY = coords.y * cellSize
 
         canvas.translate(myX, myY)
-        paint.style = Paint.Style.STROKE
-        paint.color = Color.RED
+        paint.style = Paint.Style.FILL
+        paint.color = Color.rgb(204,255,255)
         paint.strokeWidth = 2f
         canvas.drawRect(0f, 0f, cellSize.toFloat(), cellSize.toFloat(), paint)
+        paint.color = Color.rgb(0,204,204)
+        canvas.drawCircle(cellSize.toFloat() * 0.4f, cellSize.toFloat() * .3f , cellSize.toFloat()  * .1f, paint)
+        canvas.drawCircle(cellSize.toFloat() * .9f, cellSize.toFloat() * .3f , cellSize.toFloat() * .09f, paint)
+        canvas.drawCircle(cellSize.toFloat() * .1f, cellSize.toFloat() * .1f , cellSize.toFloat() * .09f, paint)
+        canvas.drawCircle(cellSize.toFloat() * .5f, cellSize.toFloat() * .6f , cellSize.toFloat() * .15f, paint)
+        canvas.drawCircle(cellSize.toFloat() * .1f, cellSize.toFloat() * .8f , cellSize.toFloat() * .15f, paint)
+        canvas.drawCircle(cellSize.toFloat() * .7f, cellSize.toFloat() * .8f , cellSize.toFloat() * .14f, paint)
+
     }
 }
